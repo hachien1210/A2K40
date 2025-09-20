@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kỉ niệm - A2K40</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Kỉ niệm của lớp A2K40</h1>
+      <nav>
+        <ul>
+          <li><a href="trang-chu.html">Trang chủ</a></li>
+          <li><a href="su-kien.html">Sự kiện</a></li>
+          <li><a href="ki-niem.html">Kỉ niệm</a></li>
+        </ul>
+      </nav>
+    </header>
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Đổi nền</button>
+
+    <main>
+      <h2>Khoảnh khắc đáng nhớ</h2>
+      <p>
+        Những ngày tháng học trò dưới mái trường THPT Triệu Sơn 3 sẽ mãi là kỉ
+        niệm không thể nào quên.
+      </p>
+
+      <div class="gallery">
+        <img
+          src="https://via.placeholder.com/300x200?text=Kỉ+niệm+1"
+          alt="Ảnh kỉ niệm 1"
+        />
+        <img
+          src="https://via.placeholder.com/300x200?text=Kỉ+niệm+2"
+          alt="Ảnh kỉ niệm 2"
+        />
+        <img
+          src="https://via.placeholder.com/300x200?text=Kỉ+niệm+3"
+          alt="Ảnh kỉ niệm 3"
+        />
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 - Lớp A2K40</p>
+    </footer>
+  </body>
+  <script>
+    //nút bật tắt sáng tối
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+      // đổi icon nút theo chế độ
+      const btn = document.querySelector(".toggle-btn");
+      if (document.body.classList.contains("dark-mode")) {
+        btn.textContent = "☀️ Chế độ sáng";
+        localStorage.setItem("theme", "dark");
+      } else {
+        btn.textContent = "🌙 Chế độ tối";
+        localStorage.setItem("theme", "light");
+      }
+    }
+    // tải lại trang giữ nguyên chế độ đã chọn
+    window.onload = function () {
+      const btn = document.querySelector(".toggle-btn");
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        btn.textContent = "☀️ Chế độ sáng";
+      } else {
+        btn.textContent = "🌙 Chế độ tối";
+      }
+    };
+  </script>
+</html>

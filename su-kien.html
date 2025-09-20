@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sự kiện - A2K40</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Sự kiện lớp A2K40</h1>
+      <nav>
+        <ul>
+          <li><a href="trang-chu.html">Trang chủ</a></li>
+          <li><a href="su-kien.html">Sự kiện</a></li>
+          <li><a href="ki-niem.html">Kỉ niệm</a></li>
+        </ul>
+      </nav>
+    </header>
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Đổi nền</button>
+
+    <main>
+      <h2>Các sự kiện đã tham gia</h2>
+      <ul>
+        <li>📅 20/11 - Văn nghệ chào mừng ngày Nhà giáo Việt Nam</li>
+        <li>⚽ Giải bóng đá cấp trường - Học kỳ 1</li>
+        <li>🎉 Dã ngoại cuối năm học</li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 - Lớp A2K40</p>
+    </footer>
+    <script>
+      //nút bật tắt sáng tối
+      function toggleMode() {
+        document.body.classList.toggle("dark-mode");
+        // đổi icon nút theo chế độ
+        const btn = document.querySelector(".toggle-btn");
+        if (document.body.classList.contains("dark-mode")) {
+          btn.textContent = "☀️ Chế độ sáng";
+          localStorage.setItem("theme", "dark");
+        } else {
+          btn.textContent = "🌙 Chế độ tối";
+          localStorage.setItem("theme", "light");
+        }
+      }
+      // tải lại trang giữ nguyên chế độ đã chọn
+      window.onload = function () {
+        const btn = document.querySelector(".toggle-btn");
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark-mode");
+          btn.textContent = "☀️ Chế độ sáng";
+        } else {
+          btn.textContent = "🌙 Chế độ tối";
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lớp A2K40 - THPT Triệu Sơn 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="typing">Chào mừng đến với Website lớp A2K40</h1>
+      <p>Trường THPT Triệu Sơn 3</p>
+      <nav>
+        <ul>
+          <li><a href="#gioithieu">Giới thiệu</a></li>
+          <li><a href="su-kien.html">Sự kiện</a></li>
+          <li><a href="ki-niem.html">Kỉ niệm</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- nút bật tất sáng tối --> 
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Đổi nền</button>
+
+  <div class="wrapper">
+      <section id="gioithieu">
+        <h2>Giới thiệu</h2>
+        <p>
+          Đây là trang web chính thức của tập thể lớp <b>A2K40</b>, nơi lưu giữ
+          những kỉ niệm, sự kiện và khoảnh khắc đáng nhớ của chúng ta tại THPT
+          Triệu Sơn 3. Tại đây, bạn có thể:
+        </p>
+          <ul style="list-style-position: outside; text-align: wrapper;">
+          <li>📸 Xem lại những khoảnh khắc kỷ niệm của tập thể lớp.</li>
+          <li>🎉 Cập nhật các sự kiện, hoạt động của lớp 12A2.</li>
+          <li>🖊️Ghi lại cảm nghĩ, chia sẻ ký ức tuổi học trò.</li>
+          </ul> 
+        <p>
+          Trang web được tạo ra không chỉ để lưu giữ hình ảnh, mà còn là nơi gắn kết tình bạn, tinh thần đoàn kết và những ước mơ tuổi trẻ.
+          <br> ❣️Chúng ta cùng nhau viết nên một phần thanh xuân rực rỡ mang tên 12A2 – K40❣️
+        </p>
+      </section>
+      <section>
+        <h2>Hình ảnh lớp</h2>
+        <img
+         <img src="images/a2k40.jpg" alt="Ảnh lớp A2K40" width="600">
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 - Lớp A2K40, THPT Triệu Sơn 3</p>
+    </footer>
+
+    <!-- Hiệu ứng gõ chữ -->
+    <script>
+      const text = "Chào mừng đến với Website lớp A2K40";
+      const typingElement = document.querySelector(".typing");
+      let index = 0;
+
+      function typeEffect() {
+        if (index < text.length) {
+          typingElement.textContent += text.charAt(index);
+          index++;
+          setTimeout(typeEffect, 100);
+        }
+      }
+
+      typingElement.textContent = "";
+      typeEffect();
+
+      //nút bật tắt sáng tối
+      function toggleMode() {
+        document.body.classList.toggle("dark-mode");
+      // đổi icon nút theo chế độ 
+      const btn = document.querySelector(".toggle-btn");
+      if (document.body.classList.contains("dark-mode")) {
+        btn.textContent = "☀️ Chế độ sáng";
+        localStorage.setItem("theme", "dark");
+      } else {
+        btn.textContent = "🌙 Chế độ tối";
+        localStorage.setItem("theme", "light");
+       }
+      }
+      // tải lại trang giữ nguyên chế độ đã chọn 
+      window.onload = function() {
+        const btn = document.querySelector(".toggle-btn");
+        if (localStorage.getItem("theme") === "dark") {
+          document.body.classList.add("dark-mode");
+          btn.textContent = "☀️ Chế độ sáng";
+        } else {
+          btn.textContent = "🌙 Chế độ tối";
+        }
+      }
+    </script>
+  </div>
+  </body>
+</html>

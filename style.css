@@ -1,0 +1,140 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f8f8f8;
+  color: #333;
+}
+
+/* Header với hiệu ứng gradient động */
+header {
+  background: linear-gradient(270deg, #004080, #0066cc, #0099ff);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+/* Ảnh có hiệu ứng hover */
+.hover-img {
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px #aaa;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.hover-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px #444;
+}
+
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+footer {
+  background: #004080;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* nút bật tất sáng tối */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  transition: background 0, 5s, color 0, 5s;
+  background: #f8f8f8;
+  color: #333;
+}
+
+body.dark-mode {
+  background: #1a1a1a;
+  color: #f1f1f1;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #004080;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0, 3s ease;
+  z-index: 1000;
+}
+
+.toggle-btn:hover {
+  background: #0066cc;
+}
+
+/* hiệu ứng ảnh */
+img {
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px #555;
+  transition: transform 0.3s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* căn chỉnh */
+.wrapper {
+  text-align: center; /* căn giữa toàn bộ khối ul */
+}
+
+.wrapper ul {
+  display: inline-block; /* đưa ul ra giữa */
+  text-align: left; /* giữ cho các li thẳng hàng */
+  list-style-position: outside; /* dấu chấm nằm ngoài, thẳng hàng */
+  padding-left: 20px; /* khoảng cách giữa dấu chấm và chữ */
+}
+
+.center img {
+  display: block;
+  margin: auto; /* căn ảnh giữa */
+}
